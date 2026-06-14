@@ -22,6 +22,25 @@ A modern and responsive personal portfolio website built using **HTML, CSS, and 
 
 This portfolio was created to present my web development skills, highlight my projects, and provide an easy way for recruiters, clients, and collaborators to connect with me.
 
+# My Portfolio
+
+## Home Page
+
+![Home Page](Screenshot%20(21).png)
+
+## About Section
+
+![About](Screenshot%20(22).png)
+
+## Projects Section
+
+![Projects](Screenshot%20(23).png)
+
+## Contact Section
+
+![Contact](Screenshot%20(24).png)
+
+
 ## Author
 
 **Saif Ali**
