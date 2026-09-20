@@ -2,6 +2,15 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
 
+/* ---- THEME: yahan se background/card colors badal sakte ho ---- */
+:root {
+      --bg: #EEF2F7;
+      /* page background: soft cool grey-blue */
+      --surface: #FFFFFF;
+      /* cards, dropdown menu */
+      --border: #CBD5E1;
+      /* card borders */
+}
 
 * {
       margin: 0;
@@ -10,10 +19,15 @@
 
 body {
       font-family: "Poppins", sans-serif;
+      background-color: var(--bg);
 }
 
 html {
       scroll-behavior: smooth;
+}
+
+img {
+      max-width: 100%;
 }
 
 p {
@@ -23,7 +37,7 @@ p {
 /* TRANSITION */
 a,
 .btn {
-      transition: all 3000ms ease;
+      transition: all 300ms ease;
 }
 
 
@@ -87,41 +101,42 @@ a:hover {
 }
 
 .hamburger-icon span {
-      width: 0100%;
+      width: 100%;
       height: 2px;
       background-color: black;
-      transition: all 0.3 ease-in-out;
+      transition: all 0.3s ease-in-out;
 }
 
 .menu-links {
       position: absolute;
       top: 100%;
       right: 0;
-      background-color: white;
+      z-index: 20;
+      background-color: var(--surface);
+      border-radius: 1rem;
       width: fit-content;
       max-height: 0;
       overflow: hidden;
-      transition: all 0.3 ease-in-out;
-
+      transition: all 0.3s ease-in-out;
 }
 
 .menu-links a {
       display: block;
-      padding: 10px;
+      padding: 10px 24px;
       text-align: center;
       font-size: 1.5rem;
       color: black;
       text-decoration: none;
-      transition: all 0.3 ease-in-out;
+      transition: all 0.3s ease-in-out;
 }
 
 .menu-links li {
       list-style: none;
-
 }
 
 .menu-links.open {
       max-height: 300px;
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.15);
 }
 
 .hamburger-icon.open span:first-child {
@@ -136,60 +151,47 @@ a:hover {
       transform: rotate(-45deg) translate(10px, -5px);
 }
 
-.hamburger-icon span:first-child {
-      transform: none;
-}
-
-.hamburger-icon span:first-child {
-      opacity: 1;
-}
-
-.hamburger-icon span:first-child {
-      transform: none;
-}
-
 /* SECTION */
 
 section {
       padding-top: 4vh;
-      height: 96vh;
+      min-height: 96vh;
       margin: 0 10rem;
       box-sizing: border-box;
-      min-height: fit-content;
-
 }
 
 .section-container {
       display: flex;
-}
-
-
-.section__pic-container img {
-      margin-top: 30px;
-      width: 80%;
-      height: 75%;
-      border-radius: 60%;
-      object-fit: cover;
+      gap: 4rem;
 }
 
 
 /* PROFILE */
 
-
 #profile {
       display: flex;
       justify-content: center;
       gap: 5rem;
-      height: 80vh;
+      min-height: 80vh;
 }
 
-
 .section__pic-container {
-
       display: flex;
-      height: 400px;
-      width: 400px;
+      height: 380px;
+      width: 380px;
       margin: auto 0;
+      flex-shrink: 0;
+}
+
+.section__pic-container img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+}
+
+.section__pic-container .about-pic {
+      border-radius: 2rem;
 }
 
 .section__text {
@@ -208,7 +210,6 @@ section {
 .section__text__p2 {
       font-size: 1.75rem;
       margin-bottom: 1rem;
-
 }
 
 .title {
@@ -228,6 +229,7 @@ section {
 .icon {
       cursor: pointer;
       height: 2rem;
+      flex-shrink: 0;
 }
 
 /* BUTTONS */
@@ -235,17 +237,15 @@ section {
 .btn-container {
       display: flex;
       justify-content: center;
+      flex-wrap: wrap;
       gap: 1rem;
-
 }
 
 .btn {
       font-weight: 600;
-      transition: all 300ms ease;
       padding: 1rem;
       width: 8rem;
       border-radius: 2rem;
-
 }
 
 .btn-color-1,
@@ -262,7 +262,6 @@ section {
 .btn-color-2:hover {
       background: rgb(53, 53, 53);
       color: white;
-
 }
 
 .btn-color-1:hover {
@@ -275,10 +274,6 @@ section {
 
 .btn-color-2:hover {
       border: rgb(255, 255, 255) 0.1rem solid;
-}
-
-.btn-container {
-      gap: 1rem;
 }
 
 /* ABOUT SECTION */
@@ -303,11 +298,6 @@ section {
       display: flex;
 }
 
-.about-pic {
-      border-radius: 2rem;
-
-}
-
 .arrow {
       position: absolute;
       right: -5rem;
@@ -317,23 +307,12 @@ section {
 .details-container {
       padding: 1.5rem;
       flex: 1;
-      background: white;
+      min-width: 0;
+      background: var(--surface);
       border-radius: 2rem;
-      border: rgb(53, 53, 53) 0.1rem solid;
-      border-color: rgb(163, 163, 163);
+      border: var(--border) 0.1rem solid;
+      box-shadow: 0 1px 3px rgba(15, 23, 42, 0.06);
       text-align: center;
-}
-
-.section-container {
-      gap: 4rem;
-      height: 80%;
-
-}
-
-.section__pic-container {
-      height: 400px;
-      width: 400px;
-      margin: auto 0;
 }
 
 /* EXPERIENCE SECTION*/
@@ -357,18 +336,9 @@ section {
 
 .article-container {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       column-gap: 4rem;
       row-gap: 2rem;
-      /* width: 250%; */
-}
-
-.article-container img {
-      /* display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      column-gap: 4rem;
-      row-gap: 2rem; */
-      width: 250%;
 }
 
 .proName {
@@ -396,28 +366,39 @@ article .icon {
       position: relative;
 }
 
-.color-container {
-      border-color: rgb(163, 163, 163);
-      background: rgb(250, 250, 250);
+/* 3 cards ek row me; jagah kam ho to neeche wrap ho jate hain */
+#projects .about-containers {
+      flex-wrap: wrap;
+      justify-content: center;
 }
 
+#projects .details-container {
+      flex: 1 1 300px;
+      max-width: 360px;
+}
+
+#projects .article-container {
+      display: block;
+}
+
+.color-container {
+      background: var(--surface);
+}
 
 .project-img {
-      /* border-radius: 2rem; */
-      width: 90%;
-      height: 90%;
-
+      display: block;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 16 / 10;
+      object-fit: cover;
+      object-position: top;
+      border-radius: 1rem;
 }
 
 .project-title {
       margin: 1rem;
       color: black;
-      /* padding-right: 10px; */
-
 }
-
-
-
 
 .project-btn {
       color: black;
@@ -430,17 +411,17 @@ article .icon {
       display: flex;
       justify-content: center;
       flex-direction: column;
-      height: 70vh;
-
+      min-height: 70vh;
 }
 
 .contact-info-upper-container {
       display: flex;
       justify-content: center;
+      flex-wrap: wrap;
+      max-width: 100%;
       border-radius: 2rem;
-      border: rgb(53, 53, 53) 0.1rem solid;
-      border-color: rgb(163, 163, 163);
-      background: (250, 250, 250);
+      border: var(--border) 0.1rem solid;
+      background: var(--surface);
       margin: 2rem auto;
       padding: 0.5rem;
 }
@@ -455,11 +436,11 @@ article .icon {
 
 .contact-info-container p {
       font-size: larger;
+      overflow-wrap: anywhere;
 }
 
 .contact-icon {
       cursor: default;
-
 }
 
 .email-icon {
@@ -469,8 +450,9 @@ article .icon {
 /*Footer Section*/
 
 footer {
-      height: 26vh;
+      min-height: 26vh;
       margin: 0 1rem;
+      padding-bottom: 1.5rem;
 }
 
 footer p {
