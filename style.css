@@ -4,8 +4,9 @@
 
 /* ---- THEME: yahan se background/card colors badal sakte ho ---- */
 :root {
-      --bg: #EEF2F7;
-      /* page background: soft cool grey-blue */
+      --bg-start: #E3E9F5;
+      --bg-end: #C9D6EC;
+      /* page background: professional slate-blue gradient */
       --surface: #FFFFFF;
       /* cards, dropdown menu */
       --border: #CBD5E1;
@@ -19,7 +20,9 @@
 
 body {
       font-family: "Poppins", sans-serif;
-      background-color: var(--bg);
+      background: rgb(203, 221, 236);
+      background-attachment: fixed;
+      min-height: 100vh;
 }
 
 html {
@@ -210,6 +213,7 @@ section {
 .section__text__p2 {
       font-size: 1.75rem;
       margin-bottom: 1rem;
+      color:black
 }
 
 .title {
@@ -311,7 +315,7 @@ section {
       background: var(--surface);
       border-radius: 2rem;
       border: var(--border) 0.1rem solid;
-      box-shadow: 0 1px 3px rgba(15, 23, 42, 0.06);
+      box-shadow: 0 4px 14px rgba(15, 23, 42, 0.12);
       text-align: center;
 }
 
@@ -422,6 +426,7 @@ article .icon {
       border-radius: 2rem;
       border: var(--border) 0.1rem solid;
       background: var(--surface);
+      box-shadow: 0 4px 14px rgba(15, 23, 42, 0.12);
       margin: 2rem auto;
       padding: 0.5rem;
 }
